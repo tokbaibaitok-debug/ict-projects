@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background-color: rgb(11, 37, 98);
+    background-image:
+        radial-gradient(circle at 15% 10%, rgba(5, 140, 250, 0.282), transparent 90%),
+        radial-gradient(circle at 85% 30%, rgba(10, 251, 255, 0.08), transparent 70%);
+    background-attachment: fixed;
+
+    /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.dess {
+    color: rgb(20, 156, 20);
+}
+
+.dess1 {
+    color: rgb(42, 122, 219);
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    background-color: rgba(12, 12, 12, 0.394);
+    z-index: 100;
+    top: 0;
+    position: sticky;
+    border-bottom: 1px solid rgb(206, 206, 206);
+    border-radius: 0 0 5px 5px;
+}
+
+.hh1 {
+    width: 500px;
+    max-width: 100%;
+}
+
+.navbar-inner {
+    width: 100%;
+    max-width: 1850px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px clamp(20px, 5vw, 60px);
+    margin: 0 auto;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.navbar-child {
+    display: flex;
+    gap: 1rem;
+    font-size: 20px;
+    flex-wrap: wrap;
+}
+
+.navbar-child a {
+    position: relative;
+    color: rgba(195, 195, 195, 0.977);
+    transition: color 0.5s ease;
+    font-weight: 700;
+    padding: 2px 0;
+}
+
+.navbar-child a::after {
+    content: "";
+    position: absolute;
+    background: rgb(54, 148, 255);
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    left: 0;
+    border-radius: 48px;
+    transition: width 0.35s ease;
+}
+
+.navbar-child a:hover {
+    color: white;
+}
+
+.navbar-child a:hover::after {
+    width: 100%;
+}
+
+.ict {
+    color: rgb(59, 121, 255);
+}
+
+.digital {
+    color: blueviolet;
+}
+
+
+/* =========================
+   MAIN / HERO
+========================= */
+
+.combine {
+    width: min(1400px, 90%);
+    margin: 100px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(30px, 5vw, 100px);
+}
+
+.title {
+    width: 100%;
+    max-width: 800px;
+
+    /* Automatically changes size depending on screen */
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+}
+
+.para {
+    color: #8a97a6;
+    margin-top: 22px;
+
+    width: 100%;
+    max-width: 480px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.main-img {
+    width: 38%;
+    max-width: 550px;
+    min-width: 300px;
+
+    height: 420px;
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    box-shadow: 9px 12px 20px rgb(24, 93, 163);
+
+    margin-top: 30px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.but-sq {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.but1 {
+    background-color: rgb(6, 143, 240);
+    color: white;
+
+    padding: 1.3rem 3rem;
+
+    border-radius: 60px;
+    font-weight: 1000;
+    border: none;
+
+    transition: 0.5s ease;
+
+    cursor: pointer;
+
+    box-shadow: inset 0 0 3px black;
+}
+
+.but1:hover {
+    transform: translateY(-4px);
+}
+
+.but2 {
+    padding: 1.3rem 1.5rem;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-radius: 60px;
+
+    font-weight: 1000;
+
+    color: rgb(6, 143, 240);
+
+    border: 1.5px solid rgb(253, 253, 253);
+
+    transition: 0.5s ease;
+
+    cursor: pointer;
+}
+
+.but2:hover {
+    color: white;
+    transform: translateY(-4px);
+    border: 1.5px solid dodgerblue;
+}
+
+
+/* =========================
+   CYBERSHIELD
+========================= */
+
+.CyberSheild {
+    width: 100%;
+    margin-top: 180px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 0 20px;
+}
+
+.cyberwhatis {
+    margin-top: 30px;
+}
+
+.whatispara {
+    width: 100%;
+    max-width: 500px;
+
+    color: #8a97a6;
+
+    line-height: 1.6;
+}
+
+.titlep {
+    border-left: 3px solid rgb(0, 179, 255);
+    padding-left: 5px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar-inner {
+        justify-content: center;
+    }
+
+    .combine {
+        margin-top: 70px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .title {
+        max-width: 700px;
+    }
+
+    .para {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .main-img {
+        width: 80%;
+        max-width: 600px;
+        min-width: 0;
+    }
+
+    .but-sq {
+        justify-content: center;
+    }
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 600px) {
+
+    .navbar-inner {
+        padding: 15px 20px;
+    }
+
+    .navbar-child {
+        font-size: 16px;
+        gap: 0.7rem;
+        justify-content: center;
+    }
+
+    .combine {
+        width: 90%;
+        margin-top: 50px;
+    }
+
+    .title {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .para {
+        font-size: 0.95rem;
+    }
+
+    .main-img {
+        width: 100%;
+        height: 300px;
+        border-radius: 20px;
+    }
+
+    .but-sq {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .but1,
+    .but2 {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .CyberSheild {
+        margin-top: 100px;
+    }
+
+    .whatispara {
+        font-size: 0.95rem;
+    }
+}
+  </style>
+</head>
+<body>
+    <header class="navbar">
+      <div class="navbar-inner">
+          <h2><span class="ict">Cyber</span> security & <span class="ict">Digital</span> Safety Showcase</h2>
+        <nav class="navbar-child" aria-label="main navigation">
+          <a href="#home">Home</a>
+          <a href="#">Display</a>
+          <a href="#">Credit</a>
+        </nav>
+      </div>
+    </header>
+    <main class="welcome-stage">
+      <section class="welcome-inner">
+        <div class="combine">
+          <article>
+            <h1 class="title" id="home">Defend Your Digital Life Against Modern Cyber Threats</h1>
+            <p class="para">CyberShield is an ICT student project created to promote cybersecurity awareness and digital safety.
+               Designed as an interactive platform, this site demonstrates how to spot phishing scams, lock down personal accounts,
+                and adopt essential habits to defend against modern online threats.</p>
+              <div class="but-sq"> 
+                <a href="#"><button class="but1">Explore Portal</button></a>
+                <a href="#cybershield"><button class="but2">What is CyberShield?</button></a>
+              </div>
+          </article>
+          <img src="images/images (1)-Picsart-AiImageEnhancer.jpg" class="main-img">
+        </div>
+        <div class="CyberSheild" id="cybershield">
+          <h1>What is CyberShield?</h1>
+          <div class="cyberwhatis">
+
+            <p class="whatispara">
+                <span class="titlep"> Interactive Training Portal</span>: A hands-on website designed for learning and practicing digital safety.
+              <br>
+                <span class="titlep"> Threat Defense</span>: Teaches protection against phishing, password theft, malware, and social engineering.
+              <br>
+                <span class="titlep"> Phishing Simulator</span>: An interactive tool to practice spotting fake emails and dangerous links safely.
+              <br>
+                <span class="titlep"> Safety Toolkits: Provides step-by-step checklists, privacy setup guides, and quick security tips.
+              <br>
+                <span class="titlep"> Incident Reporting</span>: A fast-response feature to submit suspicious emails or potential security breaches.
+              </p>
+            </div>
+        </div>
+
+        <div class="card-slots">
+          <div class="cards">
+            
+          </div>
+        </div>
+      </section>
+    </main>
+    <marquee behavior="alternate">
+    </marquee>
+</body>
+</html>
